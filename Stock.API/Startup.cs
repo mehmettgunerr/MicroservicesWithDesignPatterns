@@ -39,7 +39,7 @@ namespace Stock.API
                 {
                     cfg.Host(Configuration.GetConnectionString("RabbitMQ"));
 
-                    cfg.ReceiveEndpoint(RabbitMQSettingsConst.StockOrderCreatedEventQueueName, e =>
+                    cfg.ReceiveEndpoint(RabbitMQSettingsConst.StockReservedEventQueueName, e =>
                     {
                         e.ConfigureConsumer<OrderCreatedEventConsumer>(context);
                     });
